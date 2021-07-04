@@ -1,0 +1,102 @@
+baseURL = "www.dayone.codes"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+title = "Huy's Blog"
+theme = "cupper-hugo-theme"
+googleAnalytics = "UA-123456789-1"
+enableGitInfo = false
+
+[taxonomies]
+tag = "tags"
+
+
+[permalinks]
+post = "/:filename/"
+
+[imaging]
+quality = 99
+
+[params]
+description = "Blogging about everything"
+homeMetaContent = "Hi i'm Huy"
+footer = "Huy's Blog"
+dateFormat = "Jan 2, 2006"
+codePenUser = "someUser"
+katex = true
+hideHeaderLinks = false
+search = true
+showThemeSwitcher = true
+moveFooterToHeader = false
+logoAlt = "An alternative text description of the logo"
+customCss = [ "css/custom_01.css", "css/custom_02.css" ]
+customJs = [ "js/custom_01.js", "js/custom_02.js" ]
+
+
+
+
+[[menu.nav]]
+name = "Home"
+url = "/"
+weight = 1
+
+
+[[menu.nav]]
+name = "Tags"
+url = "/tags/"
+weight = 2
+
+[[menu.nav]]
+name = "Facebook"
+url = "https://www.facebook.com/pgh25/"
+target = "_blank"
+weight = 3
+
+
+[[menu.nav]]
+name = "Github"
+url = "https://github.com/huypg25"
+target = "_blank"
+weight = 4
+
+[[menu.nav]]
+name = "RSS"
+url = "/index.xml"
+weight = 5
+
+[markup]
+defaultMarkdownHandler = "goldmark"
+
+[markup.goldmark.extensions]
+definitionList = true
+footnote = true
+linkify = true
+strikethrough = true
+table = true
+taskList = true
+typographer = true
+
+[markup.goldmark.parser]
+attribute = true
+autoHeadingID = true
+
+[markup.goldmark.renderer]
+hardWraps = false
+unsafe = true
+xHTML = false
+
+  [markup.highlight]
+  codeFences = false
+  hl_Lines = ""
+  lineNoStart = 1
+  lineNos = false
+  lineNumbersInTable = true
+  noClasses = true
+  style = "monokai"
+  tabWidth = 4
+
+  [markup.tableOfContents]
+  endLevel = 6
+  startLevel = 2
+
+
+

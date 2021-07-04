@@ -1,0 +1,51 @@
+{{ define "main" }}
+<main id="main">
+  <h1>{{ .Title }}</h1>
+  {{ if site.Params.search }}
+  <input style="margin-top: 15px;"
+    id="search"
+    type="text"
+    placeholder="{{ T "search_placeholder" }}"
+    aria-label="{{ T "search_aria_label" }}"
+  />
+  {{ end }}
+  <br><br>
+  <ul class="patterns-list" id="list" style="margin-top: 0;">
+    {{ range .Pages.ByPublishDate.Reverse }}
+    <li> 
+<div style="font-size: small;font-weight: 200;">
+
+  <span>
+    {{ .Date.Format "Jan 2, 2006" }}
+  </span>
+
+
+
+    {{ if .Params.tags }}
+        <span style="font-style: italic;" >
+          {{ range .Params.tags }}
+           {{ $href := print ("tags/" | relLangURL) (. | urlize) "/" }}
+           #<a href="{{ $href }}" onMouseOver="this.style.color='red'" onMouseOut="this.style.color='black'">{{ . }}</a>
+          {{ end }}
+        </span>
+      {{ end }}
+</div>
+
+      <h2 style="margin-top: 0;">
+        <a href="{{ .RelPermalink }}">
+          <svg
+            class="bookmark"
+            aria-hidden="true"
+            viewBox="0 0 40 50"
+            focusable="false"
+          >
+            <use xlink:href="#bookmark"></use>
+          </svg>
+          {{ .Title }}
+        </a>
+      </h2>
+    </li>
+    {{ end }}
+  </ul>
+</main>
+{{ end }}
